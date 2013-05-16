@@ -1,9 +1,11 @@
 package com.app47.agent;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import org.appcelerator.kroll.KrollFunction;
 import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.kroll.common.Log;
@@ -57,21 +59,41 @@ public class AgentModule extends KrollModule {
 	}
 
 	@Kroll.method
-	public void sendGenericEvent(String name) {
+	public void sendGenericEvent(String name, @Kroll.argument(optional = true) KrollFunction callback) {
 		Log.d(TAG, "sendGenericEvent called with event name: " + name);
 		EmbeddedAgent.sendEvent(name);
+		invokeCallback(callback);
 	}
 
 	@Kroll.method
-	public String startTimedEvent(String name) {
+	public void genericEvent(String name, KrollFunction callback) {
+		Log.d(TAG, "genericEvent called with event name: " + name);
+		EmbeddedAgent.sendEvent(name);
+		invokeCallback(callback);
+	}
+
+	@Kroll.method
+	public void timedEvent(String name, KrollFunction callback) {
+		Log.d(TAG, "timedEvent callback method called with event name: " + name);
+		String id = EmbeddedAgent.startTimedEvent(name);
+		invokeCallback(callback);
+		EmbeddedAgent.endTimedEvent(id);
+	}
+
+	@Kroll.method
+	public void startTimedEvent(String name, KrollFunction callback) {
 		Log.d(TAG, "startTimedEvent called with event name: " + name);
-		return EmbeddedAgent.startTimedEvent(name);
+		String id = EmbeddedAgent.startTimedEvent(name);
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("id", id);
+		invokeCallback(callback, (HashMap<String, String>) (map));
 	}
 
 	@Kroll.method
-	public void endTimedEvent(String id) {
+	public void endTimedEvent(String id, @Kroll.argument(optional = true) KrollFunction callback) {
 		Log.d(TAG, "endTimedEvent called with id: " + id);
 		EmbeddedAgent.endTimedEvent(id);
+		invokeCallback(callback);
 	}
 
 	@Kroll.method
@@ -95,8 +117,9 @@ public class AgentModule extends KrollModule {
 	}
 
 	@Kroll.method
-	public Map<String, String> configurationAsMap(String groupName) {
-		return EmbeddedAgent.configurationGroupAsMap(groupName);
+	public void configurationAsMap(String groupName, KrollFunction callback) {
+		Map<String, String> map = EmbeddedAgent.configurationGroupAsMap(groupName);
+		invokeCallback(callback, (HashMap<String, String>) map);
 	}
 
 	@Kroll.method
@@ -114,4 +137,15 @@ public class AgentModule extends KrollModule {
 		return EmbeddedAgent.configurationGroupNames();
 	}
 
+	private void invokeCallback(KrollFunction callback, HashMap<String, String> map) {
+		if (callback != null) {
+			callback.call(getKrollObject(), map);
+		}
+	}
+
+	private void invokeCallback(KrollFunction callback) {
+		if (callback != null) {
+			callback.call(getKrollObject(), new HashMap<String, String>());
+		}
+	}
 }
