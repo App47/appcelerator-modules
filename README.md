@@ -18,4 +18,24 @@ agent.timedEvent("openCrust 2.0.27", function() {
 });
 ```
 
-Where the timed event wraps the corresponding callback (in this case, `openCrust` is invoked and a resultant event is sent to App47 w/a time).
+Where the timed event wraps the corresponding callback (in this case, `openCrust` is invoked and a resultant event, named "openCrust 2.0.27", is sent to App47 w/a time).
+
+On the other hand, you can execute timed events in a traditional manner as well:
+
+```
+agent.startTimedEvent("openCrust 2.0.27", function(result) {
+	var id = result['id'];
+	openCrust({});
+	agent.endTimedEvent(id);
+});
+```
+
+Or you can omit the callback:
+
+```
+var id = agent.startTimedEvent("openCrust 2.0.27");
+openCrust({});
+agent.endTimedEvent(id);
+```
+
+Due to JavaScript's nature it's recommended that you leverage the succinct callback style as outlined first.
