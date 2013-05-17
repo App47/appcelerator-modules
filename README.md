@@ -38,4 +38,12 @@ openCrust({});
 agent.endTimedEvent(id);
 ```
 
-Due to JavaScript's nature it's recommended that you leverage the succinct callback style as outlined first.
+Due to JavaScript's nature, it's recommended that you leverage the succinct idiomatic callback style as outlined first. 
+
+Generic events share the same API:
+
+```
+agent.genericEvent("include clock", function() {
+	Ti.include('../includes/clock.js');
+});
+```
