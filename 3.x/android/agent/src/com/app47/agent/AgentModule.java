@@ -1,16 +1,13 @@
 package com.app47.agent;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 import org.appcelerator.kroll.KrollFunction;
 import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.kroll.common.Log;
 import org.appcelerator.titanium.TiApplication;
-import org.appcelerator.titanium.io.TiResourceFile;
 
 import android.app.Activity;
 
@@ -28,20 +25,13 @@ public class AgentModule extends KrollModule {
 
 	@Kroll.onAppCreate
 	public static void onAppCreate(TiApplication app) {
-		TiResourceFile res = new TiResourceFile("res/values/AgentAppId");
-		if (res.exists()) {
-			try {
-				Scanner s = new Scanner(res.getInputStream()).useDelimiter("\\A");
-				String value = s.hasNext() ? s.next() : "";
-				EmbeddedAgent.configureAgentWithAppID(app.getApplicationContext(), value);
-			} catch (IOException e) {
-				Log.e(TAG, "Exception is: " + e.getLocalizedMessage() + " in trying to read file  " + res.name()
-						+ " at path: " + res.nativePath() + " and it is a file? " + res.isFile(), e);
-			}
-		} else {
-			Log.e(TAG, "The file AgentAppId could not be located, the App47 Agent will NOT work. "
-					+ "It should be located in Resources/android/res/values/ ");
-		}
+
+	}
+
+	@Kroll.method
+	public void initialize(String appId) {
+		Log.d(TAG, "initializing EmbeddedAgent with ID: " + appId);
+		EmbeddedAgent.configureAgentWithAppID(getActivity().getApplicationContext(), appId);
 	}
 
 	@Override

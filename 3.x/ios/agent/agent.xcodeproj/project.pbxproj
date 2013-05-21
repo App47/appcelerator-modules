@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		24416B8111C4CA220047AFDD /* Build & Test */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */;
+			buildPhases = (
+				24416B8011C4CA220047AFDD /* ShellScript */,
+			);
+			dependencies = (
+				24416B8511C4CA280047AFDD /* PBXTargetDependency */,
+			);
+			name = "Build & Test";
+			productName = "Build & test";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		24DD6CF91134B3F500162E58 /* ComApp47AgentModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DD6CF71134B3F500162E58 /* ComApp47AgentModule.h */; };
+		24DD6CFA1134B3F500162E58 /* ComApp47AgentModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* ComApp47AgentModule.m */; };
+		24DE9E1111C5FE74003F90F6 /* ComApp47AgentModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* ComApp47AgentModuleAssets.h */; };
+		24DE9E1211C5FE74003F90F6 /* ComApp47AgentModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* ComApp47AgentModuleAssets.m */; };
+		AA747D9F0F9514B9006C5449 /* ComApp47Agent_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ComApp47Agent_Prefix.pch */; };
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		F6EC32C7174A8E5B00D73D08 /* EmbeddedAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32AC174A8E5B00D73D08 /* EmbeddedAgent.h */; };
+		F6EC32C8174A8E5B00D73D08 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32AF174A8E5B00D73D08 /* GTMDefines.h */; };
+		F6EC32C9174A8E5B00D73D08 /* GTMObjC2Runtime.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32B0174A8E5B00D73D08 /* GTMObjC2Runtime.h */; };
+		F6EC32CA174A8E5B00D73D08 /* GTMStackTrace.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32B1174A8E5B00D73D08 /* GTMStackTrace.h */; };
+		F6EC32CB174A8E5B00D73D08 /* GTMStackTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EC32B2174A8E5B00D73D08 /* GTMStackTrace.m */; };
+		F6EC32CC174A8E5B00D73D08 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32B4174A8E5B00D73D08 /* JSON.h */; };
+		F6EC32CD174A8E5B00D73D08 /* NSObject+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32B5174A8E5B00D73D08 /* NSObject+SBJSON.h */; };
+		F6EC32CE174A8E5B00D73D08 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EC32B6174A8E5B00D73D08 /* NSObject+SBJSON.m */; };
+		F6EC32CF174A8E5B00D73D08 /* NSString+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32B7174A8E5B00D73D08 /* NSString+SBJSON.h */; };
+		F6EC32D0174A8E5B00D73D08 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EC32B8174A8E5B00D73D08 /* NSString+SBJSON.m */; };
+		F6EC32D1174A8E5B00D73D08 /* SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32B9174A8E5B00D73D08 /* SBJSON.h */; };
+		F6EC32D2174A8E5B00D73D08 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EC32BA174A8E5B00D73D08 /* SBJSON.m */; };
+		F6EC32D3174A8E5B00D73D08 /* SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32BB174A8E5B00D73D08 /* SBJsonBase.h */; };
+		F6EC32D4174A8E5B00D73D08 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EC32BC174A8E5B00D73D08 /* SBJsonBase.m */; };
+		F6EC32D5174A8E5B00D73D08 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32BD174A8E5B00D73D08 /* SBJsonParser.h */; };
+		F6EC32D6174A8E5B00D73D08 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EC32BE174A8E5B00D73D08 /* SBJsonParser.m */; };
+		F6EC32D7174A8E5B00D73D08 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32BF174A8E5B00D73D08 /* SBJsonWriter.h */; };
+		F6EC32D8174A8E5B00D73D08 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EC32C0174A8E5B00D73D08 /* SBJsonWriter.m */; };
+		F6EC32D9174A8E5B00D73D08 /* libEmbeddedAgent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EC32C1174A8E5B00D73D08 /* libEmbeddedAgent.a */; };
+		F6EC32DA174A8E5B00D73D08 /* libEmbeddedAgentEnterprise.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EC32C2174A8E5B00D73D08 /* libEmbeddedAgentEnterprise.a */; };
+		F6EC32DB174A8E5B00D73D08 /* libEmbeddedAgentEnterpriseWithNoCoreLocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EC32C3174A8E5B00D73D08 /* libEmbeddedAgentEnterpriseWithNoCoreLocation.a */; };
+		F6EC32DC174A8E5B00D73D08 /* libEmbeddedAgentWithNoCoreLocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EC32C4174A8E5B00D73D08 /* libEmbeddedAgentWithNoCoreLocation.a */; };
+		F6EC32DD174A8E5B00D73D08 /* libGMStackTrace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EC32C5174A8E5B00D73D08 /* libGMStackTrace.a */; };
+		F6EC32DE174A8E5B00D73D08 /* libSBJSon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EC32C6174A8E5B00D73D08 /* libSBJSon.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24416B8411C4CA280047AFDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = agent;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24DD6CF71134B3F500162E58 /* ComApp47AgentModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComApp47AgentModule.h; path = Classes/ComApp47AgentModule.h; sourceTree = "<group>"; };
+		24DD6CF81134B3F500162E58 /* ComApp47AgentModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComApp47AgentModule.m; path = Classes/ComApp47AgentModule.m; sourceTree = "<group>"; };
+		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
+		24DE9E0F11C5FE74003F90F6 /* ComApp47AgentModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComApp47AgentModuleAssets.h; path = Classes/ComApp47AgentModuleAssets.h; sourceTree = "<group>"; };
+		24DE9E1011C5FE74003F90F6 /* ComApp47AgentModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComApp47AgentModuleAssets.m; path = Classes/ComApp47AgentModuleAssets.m; sourceTree = "<group>"; };
+		AA747D9E0F9514B9006C5449 /* ComApp47Agent_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComApp47Agent_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D2AAC07E0554694100DB518D /* libComApp47Agent.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libComApp47Agent.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6EC32AB174A8E5B00D73D08 /* apache_license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = apache_license.txt; sourceTree = "<group>"; };
+		F6EC32AC174A8E5B00D73D08 /* EmbeddedAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbeddedAgent.h; sourceTree = "<group>"; };
+		F6EC32AD174A8E5B00D73D08 /* EmbeddedAgentSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmbeddedAgentSettings.plist; sourceTree = "<group>"; };
+		F6EC32AF174A8E5B00D73D08 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		F6EC32B0174A8E5B00D73D08 /* GTMObjC2Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMObjC2Runtime.h; sourceTree = "<group>"; };
+		F6EC32B1174A8E5B00D73D08 /* GTMStackTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMStackTrace.h; sourceTree = "<group>"; };
+		F6EC32B2174A8E5B00D73D08 /* GTMStackTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMStackTrace.m; sourceTree = "<group>"; };
+		F6EC32B4174A8E5B00D73D08 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		F6EC32B5174A8E5B00D73D08 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		F6EC32B6174A8E5B00D73D08 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		F6EC32B7174A8E5B00D73D08 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		F6EC32B8174A8E5B00D73D08 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		F6EC32B9174A8E5B00D73D08 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		F6EC32BA174A8E5B00D73D08 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		F6EC32BB174A8E5B00D73D08 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		F6EC32BC174A8E5B00D73D08 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		F6EC32BD174A8E5B00D73D08 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		F6EC32BE174A8E5B00D73D08 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		F6EC32BF174A8E5B00D73D08 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		F6EC32C0174A8E5B00D73D08 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		F6EC32C1174A8E5B00D73D08 /* libEmbeddedAgent.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEmbeddedAgent.a; sourceTree = "<group>"; };
+		F6EC32C2174A8E5B00D73D08 /* libEmbeddedAgentEnterprise.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEmbeddedAgentEnterprise.a; sourceTree = "<group>"; };
+		F6EC32C3174A8E5B00D73D08 /* libEmbeddedAgentEnterpriseWithNoCoreLocation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEmbeddedAgentEnterpriseWithNoCoreLocation.a; sourceTree = "<group>"; };
+		F6EC32C4174A8E5B00D73D08 /* libEmbeddedAgentWithNoCoreLocation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEmbeddedAgentWithNoCoreLocation.a; sourceTree = "<group>"; };
+		F6EC32C5174A8E5B00D73D08 /* libGMStackTrace.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGMStackTrace.a; sourceTree = "<group>"; };
+		F6EC32C6174A8E5B00D73D08 /* libSBJSon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSBJSon.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+				F6EC32D9174A8E5B00D73D08 /* libEmbeddedAgent.a in Frameworks */,
+				F6EC32DA174A8E5B00D73D08 /* libEmbeddedAgentEnterprise.a in Frameworks */,
+				F6EC32DB174A8E5B00D73D08 /* libEmbeddedAgentEnterpriseWithNoCoreLocation.a in Frameworks */,
+				F6EC32DC174A8E5B00D73D08 /* libEmbeddedAgentWithNoCoreLocation.a in Frameworks */,
+				F6EC32DD174A8E5B00D73D08 /* libGMStackTrace.a in Frameworks */,
+				F6EC32DE174A8E5B00D73D08 /* libSBJSon.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libComApp47Agent.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* agent */ = {
+			isa = PBXGroup;
+			children = (
+				F6EC32AA174A8E5B00D73D08 /* app47 */,
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = agent;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				24DE9E0F11C5FE74003F90F6 /* ComApp47AgentModuleAssets.h */,
+				24DE9E1011C5FE74003F90F6 /* ComApp47AgentModuleAssets.m */,
+				24DD6CF71134B3F500162E58 /* ComApp47AgentModule.h */,
+				24DD6CF81134B3F500162E58 /* ComApp47AgentModule.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AA747D9E0F9514B9006C5449 /* ComApp47Agent_Prefix.pch */,
+				24DD6D1B1134B66800162E58 /* titanium.xcconfig */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		F6EC32AA174A8E5B00D73D08 /* app47 */ = {
+			isa = PBXGroup;
+			children = (
+				F6EC32AB174A8E5B00D73D08 /* apache_license.txt */,
+				F6EC32AC174A8E5B00D73D08 /* EmbeddedAgent.h */,
+				F6EC32AD174A8E5B00D73D08 /* EmbeddedAgentSettings.plist */,
+				F6EC32AE174A8E5B00D73D08 /* GoogleToolbox */,
+				F6EC32B3174A8E5B00D73D08 /* JSON */,
+				F6EC32C1174A8E5B00D73D08 /* libEmbeddedAgent.a */,
+				F6EC32C2174A8E5B00D73D08 /* libEmbeddedAgentEnterprise.a */,
+				F6EC32C3174A8E5B00D73D08 /* libEmbeddedAgentEnterpriseWithNoCoreLocation.a */,
+				F6EC32C4174A8E5B00D73D08 /* libEmbeddedAgentWithNoCoreLocation.a */,
+				F6EC32C5174A8E5B00D73D08 /* libGMStackTrace.a */,
+				F6EC32C6174A8E5B00D73D08 /* libSBJSon.a */,
+			);
+			path = app47;
+			sourceTree = "<group>";
+		};
+		F6EC32AE174A8E5B00D73D08 /* GoogleToolbox */ = {
+			isa = PBXGroup;
+			children = (
+				F6EC32AF174A8E5B00D73D08 /* GTMDefines.h */,
+				F6EC32B0174A8E5B00D73D08 /* GTMObjC2Runtime.h */,
+				F6EC32B1174A8E5B00D73D08 /* GTMStackTrace.h */,
+				F6EC32B2174A8E5B00D73D08 /* GTMStackTrace.m */,
+			);
+			path = GoogleToolbox;
+			sourceTree = "<group>";
+		};
+		F6EC32B3174A8E5B00D73D08 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				F6EC32B4174A8E5B00D73D08 /* JSON.h */,
+				F6EC32B5174A8E5B00D73D08 /* NSObject+SBJSON.h */,
+				F6EC32B6174A8E5B00D73D08 /* NSObject+SBJSON.m */,
+				F6EC32B7174A8E5B00D73D08 /* NSString+SBJSON.h */,
+				F6EC32B8174A8E5B00D73D08 /* NSString+SBJSON.m */,
+				F6EC32B9174A8E5B00D73D08 /* SBJSON.h */,
+				F6EC32BA174A8E5B00D73D08 /* SBJSON.m */,
+				F6EC32BB174A8E5B00D73D08 /* SBJsonBase.h */,
+				F6EC32BC174A8E5B00D73D08 /* SBJsonBase.m */,
+				F6EC32BD174A8E5B00D73D08 /* SBJsonParser.h */,
+				F6EC32BE174A8E5B00D73D08 /* SBJsonParser.m */,
+				F6EC32BF174A8E5B00D73D08 /* SBJsonWriter.h */,
+				F6EC32C0174A8E5B00D73D08 /* SBJsonWriter.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA747D9F0F9514B9006C5449 /* ComApp47Agent_Prefix.pch in Headers */,
+				24DD6CF91134B3F500162E58 /* ComApp47AgentModule.h in Headers */,
+				24DE9E1111C5FE74003F90F6 /* ComApp47AgentModuleAssets.h in Headers */,
+				F6EC32C7174A8E5B00D73D08 /* EmbeddedAgent.h in Headers */,
+				F6EC32C8174A8E5B00D73D08 /* GTMDefines.h in Headers */,
+				F6EC32C9174A8E5B00D73D08 /* GTMObjC2Runtime.h in Headers */,
+				F6EC32CA174A8E5B00D73D08 /* GTMStackTrace.h in Headers */,
+				F6EC32CC174A8E5B00D73D08 /* JSON.h in Headers */,
+				F6EC32CD174A8E5B00D73D08 /* NSObject+SBJSON.h in Headers */,
+				F6EC32CF174A8E5B00D73D08 /* NSString+SBJSON.h in Headers */,
+				F6EC32D1174A8E5B00D73D08 /* SBJSON.h in Headers */,
+				F6EC32D3174A8E5B00D73D08 /* SBJsonBase.h in Headers */,
+				F6EC32D5174A8E5B00D73D08 /* SBJsonParser.h in Headers */,
+				F6EC32D7174A8E5B00D73D08 /* SBJsonWriter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* agent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "agent" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = agent;
+			productName = agent;
+			productReference = D2AAC07E0554694100DB518D /* libComApp47Agent.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "agent" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* agent */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* agent */,
+				24416B8111C4CA220047AFDD /* Build & Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24416B8011C4CA220047AFDD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\n\npython \"${TITANIUM_SDK}/titanium.py\" run --dir=\"${PROJECT_DIR}\"\nexit $?\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24DD6CFA1134B3F500162E58 /* ComApp47AgentModule.m in Sources */,
+				24DE9E1211C5FE74003F90F6 /* ComApp47AgentModuleAssets.m in Sources */,
+				F6EC32CB174A8E5B00D73D08 /* GTMStackTrace.m in Sources */,
+				F6EC32CE174A8E5B00D73D08 /* NSObject+SBJSON.m in Sources */,
+				F6EC32D0174A8E5B00D73D08 /* NSString+SBJSON.m in Sources */,
+				F6EC32D2174A8E5B00D73D08 /* SBJSON.m in Sources */,
+				F6EC32D4174A8E5B00D73D08 /* SBJsonBase.m in Sources */,
+				F6EC32D6174A8E5B00D73D08 /* SBJsonParser.m in Sources */,
+				F6EC32D8174A8E5B00D73D08 /* SBJsonWriter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24416B8511C4CA280047AFDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* agent */;
+			targetProxy = 24416B8411C4CA280047AFDD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/ComApp47Agent.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ComApp47Agent_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/app47\"",
+				);
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DTI_POST_1_2",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = ComApp47Agent;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/ComApp47Agent.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ComApp47Agent_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/app47\"",
+				);
+				OTHER_CFLAGS = "-DTI_POST_1_2";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = ComApp47Agent;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/ComApp47Agent.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ComApp47Agent_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DTI_POST_1_2",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = ComApp47Agent;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/ComApp47Agent.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ComApp47Agent_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "-DTI_POST_1_2";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = ComApp47Agent;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		24416B8211C4CA220047AFDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build & test";
+			};
+			name = Debug;
+		};
+		24416B8311C4CA220047AFDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Build & test";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "agent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "agent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24416B8211C4CA220047AFDD /* Debug */,
+				24416B8311C4CA220047AFDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
