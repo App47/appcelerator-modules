@@ -10,6 +10,12 @@ Regardless of mobile platform, the JavaScript API for the App47 Agent Appcelerat
 var agent = require('com.app47.agent');
 ```
 
+Then you'll need to provide the App47 Agent your App ID:
+
+```
+agent.initialize("5192af2a42asd23200092");
+```
+
 The JavaScript API supports two method style calls -- a traditional one and a more JavaScript friendly callback style. For example, to execute a timed event, you can code it like so:
 
 ```
