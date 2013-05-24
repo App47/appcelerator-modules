@@ -1,7 +1,9 @@
 package com.app47.agent;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.appcelerator.kroll.KrollFunction;
 import org.appcelerator.kroll.KrollModule;
@@ -28,10 +30,23 @@ public class AgentModule extends KrollModule {
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Kroll.method
-	public void initialize(String appId) {
+	public void initialize(String appId, @Kroll.argument(optional = true) HashMap options) {
 		Log.d(TAG, "initializing EmbeddedAgent with ID: " + appId);
-		EmbeddedAgent.configureAgentWithAppID(getActivity().getApplicationContext(), appId);
+
+		if (options != null) {
+			Log.d(TAG, "initializing EmbeddedAgent with options: " + options);
+			HashMap<String, String> mOpts = new HashMap<String, String>();
+			Iterator iterator = options.entrySet().iterator();
+			while( iterator.hasNext() ){
+				Entry entry = (Entry) iterator.next();
+				mOpts.put(entry.getKey().toString(), entry.getValue().toString());
+			}
+			EmbeddedAgent.configureAgentWithAppID(getActivity().getApplicationContext(), appId, mOpts);
+		} else {
+			EmbeddedAgent.configureAgentWithAppID(getActivity().getApplicationContext(), appId);
+		}
 	}
 
 	@Override

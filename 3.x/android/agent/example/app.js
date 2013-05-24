@@ -16,24 +16,19 @@ win.open();
 var agent = require('com.app47.agent');
 Ti.API.info("module is => " + agent);
 
-label.text = agent.example();
+var agent = require('com.app47.agent');
 
-Ti.API.info("module exampleProp is => " + agent.exampleProp);
-agent.exampleProp = "This is a test value";
+//agent.initialize("5192af2a42c56f2d45000092", {ConfigurationUpdateFrequency: 0.000000001, SendActualDeviceIdentifier: true});
+agent.initialize("5192af2a42c56f2d45000092");
 
-if (Ti.Platform.name == "android") {
-	var proxy = agent.createExample({
-		message: "Creating an example Proxy",
-		backgroundColor: "red",
-		width: 100,
-		height: 100,
-		top: 100,
-		left: 150
-	});
+agent.genericEvent("app started up (ios)", function() {
+	main.open();
+});
 
-	proxy.printMessage("Hello world!");
-	proxy.message = "Hi world!.  It's me again.";
-	proxy.printMessage("Hello world!");
-	win.add(proxy);
-}
+agent.timedEvent("openCrust 2.0.27", function() {
+	openCrust({});
+});
+
+
+agent.debug("main.js opened!");
 

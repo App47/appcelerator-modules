@@ -29,26 +29,6 @@
 		AA747D9F0F9514B9006C5449 /* ComApp47Agent_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ComApp47Agent_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		F6EC32C7174A8E5B00D73D08 /* EmbeddedAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32AC174A8E5B00D73D08 /* EmbeddedAgent.h */; };
-		F6EC32C8174A8E5B00D73D08 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32AF174A8E5B00D73D08 /* GTMDefines.h */; };
-		F6EC32C9174A8E5B00D73D08 /* GTMObjC2Runtime.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32B0174A8E5B00D73D08 /* GTMObjC2Runtime.h */; };
-		F6EC32CA174A8E5B00D73D08 /* GTMStackTrace.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32B1174A8E5B00D73D08 /* GTMStackTrace.h */; };
-		F6EC32CB174A8E5B00D73D08 /* GTMStackTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EC32B2174A8E5B00D73D08 /* GTMStackTrace.m */; };
-		F6EC32CC174A8E5B00D73D08 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32B4174A8E5B00D73D08 /* JSON.h */; };
-		F6EC32CD174A8E5B00D73D08 /* NSObject+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32B5174A8E5B00D73D08 /* NSObject+SBJSON.h */; };
-		F6EC32CE174A8E5B00D73D08 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EC32B6174A8E5B00D73D08 /* NSObject+SBJSON.m */; };
-		F6EC32CF174A8E5B00D73D08 /* NSString+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32B7174A8E5B00D73D08 /* NSString+SBJSON.h */; };
-		F6EC32D0174A8E5B00D73D08 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EC32B8174A8E5B00D73D08 /* NSString+SBJSON.m */; };
-		F6EC32D1174A8E5B00D73D08 /* SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32B9174A8E5B00D73D08 /* SBJSON.h */; };
-		F6EC32D2174A8E5B00D73D08 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EC32BA174A8E5B00D73D08 /* SBJSON.m */; };
-		F6EC32D3174A8E5B00D73D08 /* SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32BB174A8E5B00D73D08 /* SBJsonBase.h */; };
-		F6EC32D4174A8E5B00D73D08 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EC32BC174A8E5B00D73D08 /* SBJsonBase.m */; };
-		F6EC32D5174A8E5B00D73D08 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32BD174A8E5B00D73D08 /* SBJsonParser.h */; };
-		F6EC32D6174A8E5B00D73D08 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EC32BE174A8E5B00D73D08 /* SBJsonParser.m */; };
-		F6EC32D7174A8E5B00D73D08 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32BF174A8E5B00D73D08 /* SBJsonWriter.h */; };
-		F6EC32D8174A8E5B00D73D08 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EC32C0174A8E5B00D73D08 /* SBJsonWriter.m */; };
-		F6EC32D9174A8E5B00D73D08 /* libEmbeddedAgent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EC32C1174A8E5B00D73D08 /* libEmbeddedAgent.a */; };
-		F6EC32DA174A8E5B00D73D08 /* libEmbeddedAgentEnterprise.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EC32C2174A8E5B00D73D08 /* libEmbeddedAgentEnterprise.a */; };
-		F6EC32DB174A8E5B00D73D08 /* libEmbeddedAgentEnterpriseWithNoCoreLocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EC32C3174A8E5B00D73D08 /* libEmbeddedAgentEnterpriseWithNoCoreLocation.a */; };
 		F6EC32DC174A8E5B00D73D08 /* libEmbeddedAgentWithNoCoreLocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EC32C4174A8E5B00D73D08 /* libEmbeddedAgentWithNoCoreLocation.a */; };
 		F6EC32DD174A8E5B00D73D08 /* libGMStackTrace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EC32C5174A8E5B00D73D08 /* libGMStackTrace.a */; };
 		F6EC32DE174A8E5B00D73D08 /* libSBJSon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EC32C6174A8E5B00D73D08 /* libSBJSon.a */; };
@@ -76,26 +56,6 @@
 		F6EC32AB174A8E5B00D73D08 /* apache_license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = apache_license.txt; sourceTree = "<group>"; };
 		F6EC32AC174A8E5B00D73D08 /* EmbeddedAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbeddedAgent.h; sourceTree = "<group>"; };
 		F6EC32AD174A8E5B00D73D08 /* EmbeddedAgentSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmbeddedAgentSettings.plist; sourceTree = "<group>"; };
-		F6EC32AF174A8E5B00D73D08 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
-		F6EC32B0174A8E5B00D73D08 /* GTMObjC2Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMObjC2Runtime.h; sourceTree = "<group>"; };
-		F6EC32B1174A8E5B00D73D08 /* GTMStackTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMStackTrace.h; sourceTree = "<group>"; };
-		F6EC32B2174A8E5B00D73D08 /* GTMStackTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMStackTrace.m; sourceTree = "<group>"; };
-		F6EC32B4174A8E5B00D73D08 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		F6EC32B5174A8E5B00D73D08 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		F6EC32B6174A8E5B00D73D08 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
-		F6EC32B7174A8E5B00D73D08 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		F6EC32B8174A8E5B00D73D08 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
-		F6EC32B9174A8E5B00D73D08 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
-		F6EC32BA174A8E5B00D73D08 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
-		F6EC32BB174A8E5B00D73D08 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
-		F6EC32BC174A8E5B00D73D08 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
-		F6EC32BD174A8E5B00D73D08 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		F6EC32BE174A8E5B00D73D08 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
-		F6EC32BF174A8E5B00D73D08 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		F6EC32C0174A8E5B00D73D08 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		F6EC32C1174A8E5B00D73D08 /* libEmbeddedAgent.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEmbeddedAgent.a; sourceTree = "<group>"; };
-		F6EC32C2174A8E5B00D73D08 /* libEmbeddedAgentEnterprise.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEmbeddedAgentEnterprise.a; sourceTree = "<group>"; };
-		F6EC32C3174A8E5B00D73D08 /* libEmbeddedAgentEnterpriseWithNoCoreLocation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEmbeddedAgentEnterpriseWithNoCoreLocation.a; sourceTree = "<group>"; };
 		F6EC32C4174A8E5B00D73D08 /* libEmbeddedAgentWithNoCoreLocation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEmbeddedAgentWithNoCoreLocation.a; sourceTree = "<group>"; };
 		F6EC32C5174A8E5B00D73D08 /* libGMStackTrace.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGMStackTrace.a; sourceTree = "<group>"; };
 		F6EC32C6174A8E5B00D73D08 /* libSBJSon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSBJSon.a; sourceTree = "<group>"; };
@@ -107,9 +67,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
-				F6EC32D9174A8E5B00D73D08 /* libEmbeddedAgent.a in Frameworks */,
-				F6EC32DA174A8E5B00D73D08 /* libEmbeddedAgentEnterprise.a in Frameworks */,
-				F6EC32DB174A8E5B00D73D08 /* libEmbeddedAgentEnterpriseWithNoCoreLocation.a in Frameworks */,
 				F6EC32DC174A8E5B00D73D08 /* libEmbeddedAgentWithNoCoreLocation.a in Frameworks */,
 				F6EC32DD174A8E5B00D73D08 /* libGMStackTrace.a in Frameworks */,
 				F6EC32DE174A8E5B00D73D08 /* libSBJSon.a in Frameworks */,
@@ -173,47 +130,11 @@
 				F6EC32AB174A8E5B00D73D08 /* apache_license.txt */,
 				F6EC32AC174A8E5B00D73D08 /* EmbeddedAgent.h */,
 				F6EC32AD174A8E5B00D73D08 /* EmbeddedAgentSettings.plist */,
-				F6EC32AE174A8E5B00D73D08 /* GoogleToolbox */,
-				F6EC32B3174A8E5B00D73D08 /* JSON */,
-				F6EC32C1174A8E5B00D73D08 /* libEmbeddedAgent.a */,
-				F6EC32C2174A8E5B00D73D08 /* libEmbeddedAgentEnterprise.a */,
-				F6EC32C3174A8E5B00D73D08 /* libEmbeddedAgentEnterpriseWithNoCoreLocation.a */,
 				F6EC32C4174A8E5B00D73D08 /* libEmbeddedAgentWithNoCoreLocation.a */,
 				F6EC32C5174A8E5B00D73D08 /* libGMStackTrace.a */,
 				F6EC32C6174A8E5B00D73D08 /* libSBJSon.a */,
 			);
 			path = app47;
-			sourceTree = "<group>";
-		};
-		F6EC32AE174A8E5B00D73D08 /* GoogleToolbox */ = {
-			isa = PBXGroup;
-			children = (
-				F6EC32AF174A8E5B00D73D08 /* GTMDefines.h */,
-				F6EC32B0174A8E5B00D73D08 /* GTMObjC2Runtime.h */,
-				F6EC32B1174A8E5B00D73D08 /* GTMStackTrace.h */,
-				F6EC32B2174A8E5B00D73D08 /* GTMStackTrace.m */,
-			);
-			path = GoogleToolbox;
-			sourceTree = "<group>";
-		};
-		F6EC32B3174A8E5B00D73D08 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				F6EC32B4174A8E5B00D73D08 /* JSON.h */,
-				F6EC32B5174A8E5B00D73D08 /* NSObject+SBJSON.h */,
-				F6EC32B6174A8E5B00D73D08 /* NSObject+SBJSON.m */,
-				F6EC32B7174A8E5B00D73D08 /* NSString+SBJSON.h */,
-				F6EC32B8174A8E5B00D73D08 /* NSString+SBJSON.m */,
-				F6EC32B9174A8E5B00D73D08 /* SBJSON.h */,
-				F6EC32BA174A8E5B00D73D08 /* SBJSON.m */,
-				F6EC32BB174A8E5B00D73D08 /* SBJsonBase.h */,
-				F6EC32BC174A8E5B00D73D08 /* SBJsonBase.m */,
-				F6EC32BD174A8E5B00D73D08 /* SBJsonParser.h */,
-				F6EC32BE174A8E5B00D73D08 /* SBJsonParser.m */,
-				F6EC32BF174A8E5B00D73D08 /* SBJsonWriter.h */,
-				F6EC32C0174A8E5B00D73D08 /* SBJsonWriter.m */,
-			);
-			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,16 +148,6 @@
 				24DD6CF91134B3F500162E58 /* ComApp47AgentModule.h in Headers */,
 				24DE9E1111C5FE74003F90F6 /* ComApp47AgentModuleAssets.h in Headers */,
 				F6EC32C7174A8E5B00D73D08 /* EmbeddedAgent.h in Headers */,
-				F6EC32C8174A8E5B00D73D08 /* GTMDefines.h in Headers */,
-				F6EC32C9174A8E5B00D73D08 /* GTMObjC2Runtime.h in Headers */,
-				F6EC32CA174A8E5B00D73D08 /* GTMStackTrace.h in Headers */,
-				F6EC32CC174A8E5B00D73D08 /* JSON.h in Headers */,
-				F6EC32CD174A8E5B00D73D08 /* NSObject+SBJSON.h in Headers */,
-				F6EC32CF174A8E5B00D73D08 /* NSString+SBJSON.h in Headers */,
-				F6EC32D1174A8E5B00D73D08 /* SBJSON.h in Headers */,
-				F6EC32D3174A8E5B00D73D08 /* SBJsonBase.h in Headers */,
-				F6EC32D5174A8E5B00D73D08 /* SBJsonParser.h in Headers */,
-				F6EC32D7174A8E5B00D73D08 /* SBJsonWriter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,13 +220,6 @@
 			files = (
 				24DD6CFA1134B3F500162E58 /* ComApp47AgentModule.m in Sources */,
 				24DE9E1211C5FE74003F90F6 /* ComApp47AgentModuleAssets.m in Sources */,
-				F6EC32CB174A8E5B00D73D08 /* GTMStackTrace.m in Sources */,
-				F6EC32CE174A8E5B00D73D08 /* NSObject+SBJSON.m in Sources */,
-				F6EC32D0174A8E5B00D73D08 /* NSString+SBJSON.m in Sources */,
-				F6EC32D2174A8E5B00D73D08 /* SBJSON.m in Sources */,
-				F6EC32D4174A8E5B00D73D08 /* SBJsonBase.m in Sources */,
-				F6EC32D6174A8E5B00D73D08 /* SBJsonParser.m in Sources */,
-				F6EC32D8174A8E5B00D73D08 /* SBJsonWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

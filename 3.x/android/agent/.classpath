@@ -8,7 +8,7 @@
 	<classpathentry kind="lib" path="/Users/aglover/Library/Application Support/Titanium/mobilesdk/osx/3.1.0.GA/android/titanium.jar"/>
 	<classpathentry kind="lib" path="/Users/aglover/Library/Application Support/Titanium/mobilesdk/osx/3.1.0.GA/android/kroll-common.jar"/>
 	<classpathentry kind="lib" path="/Users/aglover/Library/Application Support/Titanium/mobilesdk/osx/3.1.0.GA/android/kroll-apt.jar"/>
-	<classpathentry kind="lib" path="lib/AndroidAgent-1.5.8.jar"/>
+	<classpathentry kind="lib" path="lib/AndroidAgent-1.6.0.jar"/>
 	<classpathentry kind="src" path=".apt_generated">
 		<attributes>
 			<attribute name="optional" value="true"/>
