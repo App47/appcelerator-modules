@@ -89,10 +89,17 @@
 
 #pragma Public APIs
 
-- (void)initialize:(id)appId
+- (void)initialize:(id)args
 {
-	ENSURE_SINGLE_ARG(appId, NSString);
-    [EmbeddedAgent configureAgentWithAppID:appId];
+    NSString* appId = [args objectAtIndex:0];
+    if([args count] > 1){
+        NSDictionary* options = [args objectAtIndex:1];
+        //todo -- the keys to this dictionary are undoubtably different than
+        //what you assumed for Android
+        [EmbeddedAgent configureAgentWithAppID:appId withSettings: options];
+    }else{
+        [EmbeddedAgent configureAgentWithAppID:appId];
+    }
     [EmbeddedAgent InstallExceptionHandlers];
 }
 

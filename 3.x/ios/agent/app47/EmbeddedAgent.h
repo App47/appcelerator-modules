@@ -35,6 +35,7 @@
 // See https://cirrus.app47.com/resource_center for more information.
 
 + (void) configureAgentWithAppID:(NSString *) appID;
++ (void) configureAgentWithAppID:(NSString *) appID withSettings:(NSDictionary *) settings;
 
 // Use configureAgentWithSettingsFilePath to load the fully qualified file path (plist file) 
 // containing all default agent settings, including the app id.
