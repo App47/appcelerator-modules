@@ -94,9 +94,25 @@
     NSString* appId = [args objectAtIndex:0];
     if([args count] > 1){
         NSDictionary* options = [args objectAtIndex:1];
-        //todo -- the keys to this dictionary are undoubtably different than
-        //what you assumed for Android
-        [EmbeddedAgent configureAgentWithAppID:appId withSettings: options];
+        NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
+
+        for(id key in options){
+            
+            if([key isEqualToString:@"ConfigurationEndpoint"]){
+                [dict setObject: [options objectForKey:key] forKey: @"configuration endpoint"];
+            }
+            if([key isEqualToString:@"SendActualDeviceIdentifier"]){
+                [dict setObject: [options objectForKey:key] forKey: @"send actual device identifier"];
+            }
+            if([key isEqualToString:@"DelayDataUploadInterval"]){
+                [dict setObject: [options objectForKey:key] forKey: @"delay data upload interval"];
+            }
+            if([key isEqualToString:@"ConfigurationUpdateFrequency"]){
+                [dict setObject: [options objectForKey:key] forKey: @"configuration update frequency"];
+            }
+        }
+        
+        [EmbeddedAgent configureAgentWithAppID:appId withSettings: dict];
     }else{
         [EmbeddedAgent configureAgentWithAppID:appId];
     }
