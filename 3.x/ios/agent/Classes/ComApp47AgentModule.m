@@ -113,6 +113,7 @@
         }
         
         [EmbeddedAgent configureAgentWithAppID:appId withSettings: dict];
+        [dict release];
     }else{
         [EmbeddedAgent configureAgentWithAppID:appId];
     }
