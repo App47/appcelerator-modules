@@ -2,7 +2,7 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 0.6
+version: 1.0.0b
 apiversion: 2
 description: App47 Embedded Agent iOS module
 author: Andrew Glover
