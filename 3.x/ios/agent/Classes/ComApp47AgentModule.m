@@ -183,6 +183,55 @@
     }    
 }
 
+- (void)configurationValue:(id)args
+{
+    NSString* group = [args objectAtIndex:0];
+    NSString* key = [args objectAtIndex:1];
+    id obj =  [EmbeddedAgent configurationObjectForKey:key group:group];
+    if([args count] > 1){
+        KrollCallback* callback = [args objectAtIndex:2];
+        if(callback){
+            NSArray* arrayOfValues = [NSArray arrayWithObjects: obj, nil];
+            [callback call:arrayOfValues thisObject:nil];
+        }
+    }
+}
+
+- (void)configurationAsMap:(id)args
+{
+    NSString* group = [args objectAtIndex:0];
+    NSDictionary* dict = [EmbeddedAgent configurationGroupAsDictionary:group];
+    
+    if([args count] > 1){
+        KrollCallback* callback = [args objectAtIndex:1];
+        if(callback){
+            NSArray* arrayOfValues = [NSArray arrayWithObjects: dict, nil];
+            [callback call:arrayOfValues thisObject:nil];
+        }
+    }
+}
+
+- (void)configurationGroupNames:(id)args
+{
+    NSArray* arry = [EmbeddedAgent configurationGroupNames];
+    KrollCallback* callback = [args objectAtIndex:0];
+    if(callback){
+        [callback call:arry thisObject:nil];
+    }
+}
+
+- (void)configurationKeys:(id)args
+{
+    NSString* group = [args objectAtIndex:0];
+    NSArray* arry = [EmbeddedAgent allKeysForConfigurationGroup:group];
+    if([args count] > 1){
+        KrollCallback* callback = [args objectAtIndex:1];
+        if(callback){
+            [callback call:arry thisObject:nil];
+        }
+    }
+}
+
 - (void)info:(id)msg
 {
     ENSURE_SINGLE_ARG(msg, NSString);

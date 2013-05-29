@@ -39,7 +39,7 @@ public class AgentModule extends KrollModule {
 			Log.d(TAG, "initializing EmbeddedAgent with options: " + options);
 			HashMap<String, String> mOpts = new HashMap<String, String>();
 			Iterator iterator = options.entrySet().iterator();
-			while( iterator.hasNext() ){
+			while (iterator.hasNext()) {
 				Entry entry = (Entry) iterator.next();
 				mOpts.put(entry.getKey().toString(), entry.getValue().toString());
 			}
@@ -128,18 +128,29 @@ public class AgentModule extends KrollModule {
 	}
 
 	@Kroll.method
-	public String[] configurationKeys(String groupName) {
-		return EmbeddedAgent.allKeysForConfigurationGroup(groupName);
+	public void configurationKeys(String groupName, KrollFunction callback) {
+		String[] values = EmbeddedAgent.allKeysForConfigurationGroup(groupName);
+		invokeCallback(callback, values);
 	}
 
 	@Kroll.method
-	public Object configurationValue(String group, String key) {
-		return EmbeddedAgent.configurationObjectForKey(group, key);
+	public void configurationValue(String group, String key, KrollFunction callback) {
+		Object value = EmbeddedAgent.configurationObjectForKey(group, key);
+		if (callback != null) {
+			callback.call(getKrollObject(), new Object[] { value });
+		}
 	}
 
 	@Kroll.method
-	public String[] configurationGroupNames() {
-		return EmbeddedAgent.configurationGroupNames();
+	public void configurationGroupNames(KrollFunction callback) {
+		String[] values = EmbeddedAgent.configurationGroupNames();
+		invokeCallback(callback, values);
+	}
+
+	private void invokeCallback(KrollFunction callback, String[] args) {
+		if (callback != null) {
+			callback.call(getKrollObject(), args);
+		}
 	}
 
 	private void invokeCallback(KrollFunction callback, HashMap<String, String> map) {
