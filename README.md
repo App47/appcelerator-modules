@@ -4,7 +4,9 @@ This repo contains two code bases: one for the Android Agent and another for the
 
 ## Details
 
-Regardless of mobile platform, the JavaScript API for the App47 Agent Appcelerator module has a consistent API. To include the Agent, follow the instructions for adding an Appcelerator module. Include the code like so:
+Regardless of mobile platform, the JavaScript API for the App47 Agent Appcelerator module has a consistent API. To include the Agent, follow the instructions for adding an Appcelerator module (i.e. download the corresponding zip file and update your `tiapp.xml` file. 
+
+Include the module like so:
 
 ```
 var agent = require('com.app47.agent');
@@ -15,6 +17,28 @@ Then you'll need to provide the App47 Agent your App ID:
 ```
 agent.initialize("5192af2a42asd23200092");
 ```
+
+The `initialize` takes an optional hash of configuration values. You can find details of these values on the [App47 wiki](http://app47.com/wiki/doku.php):
+
+* [Configuring Android Agent](http://app47.com/wiki/doku.php?id=configure:androidapp#configure_embedded_agent)
+* [Configuring iOS Agent](http://app47.com/wiki/doku.php?id=configure:iosapp#configure_the_embedded_agent)
+
+While each Agent platform library has its own configuration values, the Appcelerator App47 Agent module has a consistent set of keys:
+
+ * ConfigurationEndpoint
+ * SendActualDeviceIdentifier
+ * DelayDataUploadInterval
+ * ConfigurationUpdateFrequency
+ * ShowNetworkActivity
+ * AgentLoggingLevel
+ * SendEventsImmediately
+ * UploadOnExit
+
+ You must use these keys in configuring the Agent via the Appcelerator module. For example:
+
+ ```
+ agent.initialize("5192af2a42c56f2d45000092", {ConfigurationUpdateFrequency: 0.000000001, SendActualDeviceIdentifier: true});
+ ```
 
 The JavaScript API supports two method style calls -- a traditional one and a more JavaScript friendly callback style. For example, to execute a timed event, you can code it like so:
 
