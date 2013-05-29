@@ -81,7 +81,7 @@
     NSString* appId = [args objectAtIndex:0];
     if([args count] > 1){
         NSDictionary* options = [args objectAtIndex:1];
-        NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
+        NSMutableDictionary* dict = [[[NSMutableDictionary alloc] init] autorelease];
 
         for(id key in options){
             
@@ -112,7 +112,6 @@
         }
         
         [EmbeddedAgent configureAgentWithAppID:appId withSettings: dict];
-        [dict release];
     }else{
         [EmbeddedAgent configureAgentWithAppID:appId];
     }
@@ -164,7 +163,7 @@
     
     KrollCallback* callback = [args objectAtIndex:1];
     if(callback){
-        NSDictionary* dict = [[NSDictionary alloc] initWithObjectsAndKeys:@"id", eventID, nil];
+        NSDictionary* dict = [[[NSDictionary alloc] initWithObjectsAndKeys:@"id", eventID, nil] autorelease];
         NSArray* arrayOfValues = [NSArray arrayWithObjects: dict, nil];
         [callback call:arrayOfValues thisObject:nil];
     }
