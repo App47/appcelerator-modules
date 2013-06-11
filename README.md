@@ -102,3 +102,45 @@ agent.warn("warning, main.js was opened!");
 agent.error("good grief, main.js opened!?");
 agent.crash("oh no! main.js opened?!!? Bye....");
 ```
+
+### Configuration Groups
+
+Configuration Groups allows you to set a collection of key value pairs through the App47 Dashboard that are then downloaded by the Agent at initial startup, and then subsequently at a frequency set by the `ConfigurationUpdateFrequency` configuration variable. Configuration items must be requested by group name and key name.
+
+For example, if your app has a group named "Test Group" and a key named "host", you can get its value like so:
+
+```
+agent.configurationValue("Test Group", "host", function(result){
+	var host_value = result[0];
+});
+```
+
+There are a few other calls available to you as well. You can retrieve all group names for an app like so:
+
+```
+agent.configurationGroupNames(function(result){
+	//result is a string array of group names
+});
+```
+
+You can retrieve all keys for a group:
+
+```
+agent.configurationKeys("Test Group", function(result){
+	//result is a string array of keys in the Test Group
+});
+```
+
+And you can retrieve a dictionary representation of the keys and values in a group like so:
+
+```
+agent.configurationAsMap("Test Group", function(result){
+	//result is an associative array of keys & values in the Test Group
+});
+```
+
+
+
+
+
+
