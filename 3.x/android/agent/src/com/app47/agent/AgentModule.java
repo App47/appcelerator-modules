@@ -5,12 +5,17 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.kroll.KrollFunction;
 import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.kroll.common.Log;
 import org.appcelerator.titanium.TiApplication;
-
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.support.v4.content.LocalBroadcastManager;
 import android.app.Activity;
 
 import com.app47.embeddedagent.EmbeddedAgent;
@@ -20,9 +25,26 @@ import com.app47.embeddedagent.EmbeddedAgentLogger;
 public class AgentModule extends KrollModule {
 
 	private static final String TAG = "App47AgentModule";
-
+	@Kroll.constant
+	public static final String CONFIGURATION_COMPLETE = "agent-configuration-complete";
+	
+	
 	public AgentModule() {
 		super();
+		initReceiver();
+	}
+
+	private void initReceiver() {
+		BroadcastReceiver receiver = new BroadcastReceiver() {
+			public void onReceive(Context context, Intent intent) {
+				KrollDict event = new KrollDict();
+				event.put("message", "agent-config-complete");
+				fireEvent(CONFIGURATION_COMPLETE, event);
+			}
+		};
+		Activity currentActivity = TiApplication.getInstance().getCurrentActivity();
+		LocalBroadcastManager.getInstance(currentActivity).registerReceiver(receiver,
+				new IntentFilter(EmbeddedAgent.CONFIG_COMPLETE_BROADCAST));
 	}
 
 	@Kroll.onAppCreate
