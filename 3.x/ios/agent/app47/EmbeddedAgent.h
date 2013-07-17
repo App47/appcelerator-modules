@@ -187,22 +187,40 @@
 + (id) configurationObjectForKey:(NSString *) key defaultValue:(id)defaultValue;
 + (NSArray *) configurationObjectsForKey:(NSString *) key;
 
-// Configuration updates happen in a background thread, subsequently the App can be notified when 
+// Register with the NSNotification center to receive these events.
+
+// Configuration updates happen on a background thread, subsequently the App can be notified when
 // the configuration of a group did change. You will recieved one message for each configuration group
-// Change.
+// change.
 extern NSString * const EmbeddedAgentAppConfigurationGroupDidInsert;
 extern NSString * const EmbeddedAgentAppConfigurationGroupDidUpdate;
 extern NSString * const EmbeddedAgentAppConfigurationGroupDidDelete;
 // Each message will contain a single value in the userInfo with the following key. The value returned
 // by the key is the name of the group that was either added, updated, or deleted.
 extern NSString * const EmbeddedAgentAppConfigurationGroupNameKey;
+// Message if a particular group failed to update.
+extern NSString * const EmbeddedAgentAppConfigurationGroupFetchDidFail;
 // Alternatively, you can register a single notification when any configuration group changes.
 // The name of the configuration group and specific action is NOT sent, only the fact that 
-// the configurationg roup was change.
+// the configurationg group was change.
 extern NSString * const EmbeddedAgentAppConfigurationGroupDidChange;
+// Message is sent when all configuration groups has started and finished. If no configuration
+// groups are present, these message is not sent.
+extern NSString * const EmbeddedAgentAppConfigurationUpdateDidStart;
+extern NSString * const EmbeddedAgentAppConfigurationUpdateDidFinish;
+// Starting the agent configuration process.
+extern NSString * const EmbeddedAgentConfigurationDidStart;
+// Sent when the agent is done checking configuration and ready to operate. This will kick off the
+// data upload process.
+extern NSString * const EmbeddedAgentConfigurationDidFinish;
+// If the agent cannot check in, either new or update, this message is sent to know the update operation
+// is done, but was not able to complete, check the logs for more information.
+extern NSString * const EmbeddedAgentConfigurationDidFail;
+// If the agent is unable to register with the server, which it only does once, the register did fail
+// message will be sent.
+extern NSString * const EmbeddedAgentRegistrationDidFail;
 
-// Register with the NSNotification center to receive these events.
-// Give example
+
 
 //////////////////////////////////////////////////////////////////
 // Exception handling and crash loggin

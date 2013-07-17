@@ -10,4 +10,8 @@
 {
 }
 
+//@property(nonatomic,readonly) NSNumber *CONFIGURATION_COMPLETE;
+//@property(nonatomic,readonly) NSString *CONFIGURATION_COMPLETE2;
+extern NSString * const CONFIGURATION_COMPLETE;
+
 @end

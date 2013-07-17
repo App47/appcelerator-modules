@@ -12,6 +12,9 @@
 #import "TiUtils.h"
 #import "EmbeddedAgent.h"
 
+
+NSString * const CONFIGURATION_COMPLETE = @"agent-configuration-complete";
+
 @implementation ComApp47AgentModule
 
 #pragma mark Internal
@@ -31,13 +34,26 @@
 -(void)startup
 {
 	[super startup];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(agentNotificationReceived) name:EmbeddedAgentAppConfigurationUpdateDidFinish object:nil];
 	NSLog(@"[INFO] %@ loaded", self);
+}
+
+-(void)agentNotificationReceived
+{
+    NSLog(@"[INFO] agentNotificationReceived invoked");
+    [self fireEvent:@"agent-configuration-complete" withObject:nil];
 }
 
 -(void)shutdown:(id)sender
 {
 	[super shutdown:sender];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:EmbeddedAgentAppConfigurationUpdateDidFinish object:nil];
 }
+
+#pragma mark Properties
+
+//MAKE_SYSTEM_PROP(CONFIGURATION_COMPLETE, CONFIGURATION_COMPLETE);
+
 
 #pragma mark Cleanup 
 
@@ -76,6 +92,12 @@
 
 #pragma Public APIs
 
+
+-(id)CONFIGURATION_COMPLETE
+{
+    return CONFIGURATION_COMPLETE;
+}
+
 - (void)initialize:(id)args
 {
     NSString* appId = [args objectAtIndex:0];
@@ -110,9 +132,10 @@
                 [dict setObject: [options objectForKey:key] forKey: @"upload on exit"];
             }
         }
-        
+        NSLog(@"configureAgentWithAppID is being invoked with %@, and dict %@!", appId, dict);
         [EmbeddedAgent configureAgentWithAppID:appId withSettings: dict];
     }else{
+        NSLog(@"configureAgentWithAppID is being invoked with %@ and w/o dict", appId);
         [EmbeddedAgent configureAgentWithAppID:appId];
     }
     [EmbeddedAgent InstallExceptionHandlers];

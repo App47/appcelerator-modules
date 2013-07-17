@@ -28,6 +28,8 @@
 		24DE9E1211C5FE74003F90F6 /* ComApp47AgentModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* ComApp47AgentModuleAssets.m */; };
 		AA747D9F0F9514B9006C5449 /* ComApp47Agent_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ComApp47Agent_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		F60BE9451796ED330037C49C /* ComApp47AgentProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = F60BE9431796ED330037C49C /* ComApp47AgentProxy.h */; };
+		F60BE9461796ED330037C49C /* ComApp47AgentProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F60BE9441796ED330037C49C /* ComApp47AgentProxy.m */; };
 		F6EC32C7174A8E5B00D73D08 /* EmbeddedAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32AC174A8E5B00D73D08 /* EmbeddedAgent.h */; };
 		F6EC32DC174A8E5B00D73D08 /* libEmbeddedAgentWithNoCoreLocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EC32C4174A8E5B00D73D08 /* libEmbeddedAgentWithNoCoreLocation.a */; };
 		F6EC32DD174A8E5B00D73D08 /* libGMStackTrace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EC32C5174A8E5B00D73D08 /* libGMStackTrace.a */; };
@@ -53,6 +55,8 @@
 		AA747D9E0F9514B9006C5449 /* ComApp47Agent_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComApp47Agent_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libComApp47Agent.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libComApp47Agent.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F60BE9431796ED330037C49C /* ComApp47AgentProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComApp47AgentProxy.h; path = Classes/ComApp47AgentProxy.h; sourceTree = "<group>"; };
+		F60BE9441796ED330037C49C /* ComApp47AgentProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComApp47AgentProxy.m; path = Classes/ComApp47AgentProxy.m; sourceTree = "<group>"; };
 		F6EC32AB174A8E5B00D73D08 /* apache_license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = apache_license.txt; sourceTree = "<group>"; };
 		F6EC32AC174A8E5B00D73D08 /* EmbeddedAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbeddedAgent.h; sourceTree = "<group>"; };
 		F6EC32AD174A8E5B00D73D08 /* EmbeddedAgentSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmbeddedAgentSettings.plist; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				24DE9E1011C5FE74003F90F6 /* ComApp47AgentModuleAssets.m */,
 				24DD6CF71134B3F500162E58 /* ComApp47AgentModule.h */,
 				24DD6CF81134B3F500162E58 /* ComApp47AgentModule.m */,
+				F60BE9431796ED330037C49C /* ComApp47AgentProxy.h */,
+				F60BE9441796ED330037C49C /* ComApp47AgentProxy.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -148,6 +154,7 @@
 				24DD6CF91134B3F500162E58 /* ComApp47AgentModule.h in Headers */,
 				24DE9E1111C5FE74003F90F6 /* ComApp47AgentModuleAssets.h in Headers */,
 				F6EC32C7174A8E5B00D73D08 /* EmbeddedAgent.h in Headers */,
+				F60BE9451796ED330037C49C /* ComApp47AgentProxy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +227,7 @@
 			files = (
 				24DD6CFA1134B3F500162E58 /* ComApp47AgentModule.m in Sources */,
 				24DE9E1211C5FE74003F90F6 /* ComApp47AgentModuleAssets.m in Sources */,
+				F60BE9461796ED330037C49C /* ComApp47AgentProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
