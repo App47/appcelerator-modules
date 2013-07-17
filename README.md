@@ -1,10 +1,10 @@
 # App47 Agent Appcelerator Modules
 
-This repository contains two code bases: one for the Android Agent and another for the iOS Agent. You can find the zip files containing the built and supported versions of these platform modules in the App47 Resource center located in your account's dashboard.
+This repository contains two code bases: one for the Android Agent and another for the iOS Agent. You can find the zip files containing the built and supported versions of these platform modules in the [App47 Resource center](https://cirrus.app47.com) located in your account's dashboard.
 
 ## How to use the App47 Agent
 
-Regardless of mobile platform, the JavaScript API for the App47 Agent Appcelerator module has a consistent API. To include the Agent, follow the instructions for adding an Appcelerator module (i.e. download the corresponding zip file and update your `tiapp.xml` file. 
+Regardless of mobile platform, the JavaScript API for the App47 Agent Appcelerator module has a consistent API. To include the Agent, follow the instructions for adding an Appcelerator module (i.e. download the corresponding zip file, place it in the root of your project, and update your `tiapp.xml` file). 
 
 Include the module like so:
 
@@ -44,6 +44,19 @@ You must use these keys in configuring the Agent via the Appcelerator module. Fo
  ```
 
 Please note, if no configuration values are provided, the Agent will still work with intelligent default values. 
+
+### Agent configuration finished listener
+
+The App47 Agent is designed to be lightweight and unobtrusive to the app it is embedded in; consequently, the Agent works in an asynchronous manner. Calling the `initialize` method, for example, does not guarantee that the Agent is immediately available once that call returns. Therefore, you can attach a listener for an event that signals the underlying Agent has finished initializing. 
+
+The event is called `CONFIGURATION_COMPLETE`; you can register to listen for it in your Appcelerator app like so:
+
+```
+agent.addEventListener(agent.CONFIGURATION_COMPLETE, function(e) {
+	Ti.API.info("Agent finished loading all configuration data and is ready to go!");
+});
+```
+
 
 ### Events API
 
