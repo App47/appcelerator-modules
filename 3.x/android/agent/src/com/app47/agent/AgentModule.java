@@ -6,8 +6,10 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.appcelerator.kroll.KrollDict;
+import org.appcelerator.kroll.KrollExceptionHandler;
 import org.appcelerator.kroll.KrollFunction;
 import org.appcelerator.kroll.KrollModule;
+import org.appcelerator.kroll.KrollRuntime;
 import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.kroll.common.Log;
 import org.appcelerator.titanium.TiApplication;
@@ -27,8 +29,7 @@ public class AgentModule extends KrollModule {
 	private static final String TAG = "App47AgentModule";
 	@Kroll.constant
 	public static final String CONFIGURATION_COMPLETE = "agent-configuration-complete";
-	
-	
+
 	public AgentModule() {
 		super();
 		initReceiver();
@@ -69,6 +70,17 @@ public class AgentModule extends KrollModule {
 		} else {
 			EmbeddedAgent.configureAgentWithAppID(getActivity().getApplicationContext(), appId);
 		}
+		registerExceptionHandler();
+	}
+
+	private void registerExceptionHandler() {
+		KrollExceptionHandler handler = new KrollExceptionHandler() {
+			public void handleException(ExceptionMessage excepMsg) {
+				EmbeddedAgentLogger.crash(excepMsg.title + " at " + excepMsg.sourceName + ", line: " + excepMsg.line
+						+ " " + excepMsg.message);
+			}
+		};
+		KrollRuntime.addAdditionalExceptionHandler(handler, TAG + "::ExceptionHandler");
 	}
 
 	@Override
@@ -144,13 +156,18 @@ public class AgentModule extends KrollModule {
 	}
 
 	@Kroll.method
-	public void crash(){
-		//NPE
+	public void crash(String message) {
+		EmbeddedAgentLogger.crash(message);
+	}
+
+	@Kroll.method
+	public void crashMeOnPurpose() {
+		// NPE
 		String value = null;
 		char val = value.charAt(0);
-		int valno = 100000/0;
+		int valno = 100000 / 0;
 	}
-	
+
 	@Kroll.method
 	public void configurationAsMap(String groupName, KrollFunction callback) {
 		Map<String, String> map = EmbeddedAgent.configurationGroupAsMap(groupName);

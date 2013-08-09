@@ -5,8 +5,9 @@
  * and licensed under the Apache Public License (version 2)
  */
 #import "TiModule.h"
+#import "TiExceptionHandler.h"
 
-@interface ComApp47AgentModule : TiModule 
+@interface ComApp47AgentModule : TiModule <TiExceptionHandlerDelegate>
 {
 }
 

@@ -13,6 +13,7 @@
 #import "EmbeddedAgent.h"
 
 
+
 NSString * const CONFIGURATION_COMPLETE = @"agent-configuration-complete";
 
 @implementation ComApp47AgentModule
@@ -90,7 +91,30 @@ NSString * const CONFIGURATION_COMPLETE = @"agent-configuration-complete";
 	}
 }
 
+
+#pragma TiExceptionHandlerDelegate requirements
+
+- (void)handleUncaughtException:(NSException *)exception withStackTrace:(NSArray *)stackTrace
+{
+    EALogCrashException(exception, @"Uncaught Exception, application Crashed");
+    [[TiExceptionHandler defaultExceptionHandler] setDelegate:nil];
+    [[TiExceptionHandler defaultExceptionHandler] handleUncaughtException:exception withStackTrace:stackTrace];
+}
+
+- (void)handleScriptError:(TiScriptError *)error
+{
+    [EmbeddedAgent logMessage:[error message] fileName:[error sourceURL] lineNumber:[error lineNo] level:@"crash" error:nil exception:nil tags:nil];
+    [[TiExceptionHandler defaultExceptionHandler] setDelegate:nil];
+    [[TiExceptionHandler defaultExceptionHandler] handleScriptError:error];
+}
+
 #pragma Public APIs
+
+-(void)crashMeOnPurpose
+{
+    NSString* str = @"value";
+    [str nothing];
+}
 
 
 -(id)CONFIGURATION_COMPLETE
@@ -139,6 +163,7 @@ NSString * const CONFIGURATION_COMPLETE = @"agent-configuration-complete";
         [EmbeddedAgent configureAgentWithAppID:appId];
     }
     [EmbeddedAgent InstallExceptionHandlers];
+    [[TiExceptionHandler defaultExceptionHandler] setDelegate:self];
 }
 
 - (void)sendGenericEvent:(id)args
