@@ -144,6 +144,14 @@ public class AgentModule extends KrollModule {
 	}
 
 	@Kroll.method
+	public void crash(){
+		//NPE
+		String value = null;
+		char val = value.charAt(0);
+		int valno = 100000/0;
+	}
+	
+	@Kroll.method
 	public void configurationAsMap(String groupName, KrollFunction callback) {
 		Map<String, String> map = EmbeddedAgent.configurationGroupAsMap(groupName);
 		invokeCallback(callback, (HashMap<String, String>) map);
