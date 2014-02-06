@@ -13,6 +13,8 @@ import org.appcelerator.kroll.KrollRuntime;
 import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.kroll.common.Log;
 import org.appcelerator.titanium.TiApplication;
+import org.appcelerator.titanium.TiApplication.ActivityTransitionListener;
+import org.appcelerator.titanium.TiContext;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -24,15 +26,41 @@ import com.app47.embeddedagent.EmbeddedAgent;
 import com.app47.embeddedagent.EmbeddedAgentLogger;
 
 @Kroll.module(name = "Agent", id = "com.app47.agent")
-public class AgentModule extends KrollModule {
+public class AgentModule extends KrollModule implements ActivityTransitionListener{
 
 	private static final String TAG = "App47AgentModule";
 	@Kroll.constant
 	public static final String CONFIGURATION_COMPLETE = "agent-configuration-complete";
+	private Activity lastActivity;
 
 	public AgentModule() {
 		super();
 		initReceiver();
+		// Log.d(TAG, "Creating AgentModule");
+		TiApplication.addActivityTransitionListener(this);
+	}
+
+	public void onActivityTransition(boolean state){
+		Activity currentActivity = TiApplication.getInstance().getCurrentActivity();
+		if (currentActivity==null){
+			if (lastActivity==null){
+				// Log.d(TAG, "onActivityTransition: No activities, ignoring message");
+			} else {
+				// Log.d(TAG, "onActivityTransition: pausing: using last context : " + lastActivity.getTitle());
+				EmbeddedAgent.onPause(lastActivity.getApplicationContext());
+				// We only want to use this once, after that ignore any additional messages
+				lastActivity = null;
+			}
+		} else {
+			// Log.d(TAG, "onActivityTransition: " + state + " - title of current activity is :" + currentActivity.getTitle());
+			if (state) { // activity is pausing (odd use of boolean)
+				EmbeddedAgent.onPause(currentActivity.getApplicationContext());
+			} else { // false is the activity resuming
+				EmbeddedAgent.onResume(currentActivity.getApplicationContext());
+			}
+			lastActivity = currentActivity;
+		}
+		
 	}
 
 	private void initReceiver() {
@@ -49,17 +77,15 @@ public class AgentModule extends KrollModule {
 	}
 
 	@Kroll.onAppCreate
-	public static void onAppCreate(TiApplication app) {
-
-	}
+	public static void onAppCreate(TiApplication app) {	}
 
 	@SuppressWarnings("rawtypes")
 	@Kroll.method
 	public void initialize(String appId, @Kroll.argument(optional = true) HashMap options) {
-		Log.d(TAG, "initializing EmbeddedAgent with ID: " + appId);
+		// Log.d(TAG, "initializing EmbeddedAgent with ID: " + appId);
 
 		if (options != null) {
-			Log.d(TAG, "initializing EmbeddedAgent with options: " + options);
+			// Log.d(TAG, "initializing EmbeddedAgent with options: " + options);
 			HashMap<String, String> mOpts = new HashMap<String, String>();
 			Iterator iterator = options.entrySet().iterator();
 			while (iterator.hasNext()) {
@@ -83,37 +109,23 @@ public class AgentModule extends KrollModule {
 		KrollRuntime.addAdditionalExceptionHandler(handler, TAG + "::ExceptionHandler");
 	}
 
-	@Override
-	public void onPause(Activity activity) {
-		super.onPause(activity);
-		Log.d(TAG, "onPause invoked and title of passed in activity is :" + activity.getTitle());
-		EmbeddedAgent.onPause(activity.getApplicationContext());
-	}
-
-	@Override
-	public void onResume(Activity activity) {
-		super.onResume(activity);
-		Log.d(TAG, "onResume invoked and title of passed in activity is :" + activity.getTitle());
-		EmbeddedAgent.onResume(activity.getApplicationContext());
-	}
-
 	@Kroll.method
 	public void sendGenericEvent(String name, @Kroll.argument(optional = true) KrollFunction callback) {
-		Log.d(TAG, "sendGenericEvent called with event name: " + name);
+		// Log.d(TAG, "sendGenericEvent called with event name: " + name);
 		EmbeddedAgent.sendEvent(name);
 		invokeCallback(callback);
 	}
 
 	@Kroll.method
 	public void genericEvent(String name, KrollFunction callback) {
-		Log.d(TAG, "genericEvent called with event name: " + name);
+		// Log.d(TAG, "genericEvent called with event name: " + name);
 		EmbeddedAgent.sendEvent(name);
 		invokeCallback(callback);
 	}
 
 	@Kroll.method
 	public void timedEvent(String name, KrollFunction callback) {
-		Log.d(TAG, "timedEvent callback method called with event name: " + name);
+		// Log.d(TAG, "timedEvent callback method called with event name: " + name);
 		String id = EmbeddedAgent.startTimedEvent(name);
 		invokeCallback(callback);
 		EmbeddedAgent.endTimedEvent(id);
@@ -121,7 +133,7 @@ public class AgentModule extends KrollModule {
 
 	@Kroll.method
 	public void startTimedEvent(String name, KrollFunction callback) {
-		Log.d(TAG, "startTimedEvent called with event name: " + name);
+		// Log.d(TAG, "startTimedEvent called with event name: " + name);
 		String id = EmbeddedAgent.startTimedEvent(name);
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("id", id);
@@ -130,7 +142,7 @@ public class AgentModule extends KrollModule {
 
 	@Kroll.method
 	public void endTimedEvent(String id, @Kroll.argument(optional = true) KrollFunction callback) {
-		Log.d(TAG, "endTimedEvent called with id: " + id);
+		// Log.d(TAG, "endTimedEvent called with id: " + id);
 		EmbeddedAgent.endTimedEvent(id);
 		invokeCallback(callback);
 	}
