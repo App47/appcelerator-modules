@@ -41,7 +41,10 @@ public class AgentModule extends KrollModule implements ActivityTransitionListen
 	}
 
 	public void onActivityTransition(boolean state){
-		Activity currentActivity = TiApplication.getInstance().getCurrentActivity();
+		Activity currentActivity = null;
+        // Make sure we get an instance back before trying to get the current activity.
+        if (TiApplication.getInstance() !=null)
+          currentActivity = TiApplication.getInstance().getCurrentActivity();
 		if (currentActivity==null){
 			if (lastActivity==null){
 				// Log.d(TAG, "onActivityTransition: No activities, ignoring message");
