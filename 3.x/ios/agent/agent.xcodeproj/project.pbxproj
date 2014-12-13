@@ -33,7 +33,6 @@
 		F6EC32C7174A8E5B00D73D08 /* EmbeddedAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC32AC174A8E5B00D73D08 /* EmbeddedAgent.h */; };
 		F6EC32DC174A8E5B00D73D08 /* libEmbeddedAgentWithNoCoreLocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EC32C4174A8E5B00D73D08 /* libEmbeddedAgentWithNoCoreLocation.a */; };
 		F6EC32DD174A8E5B00D73D08 /* libGMStackTrace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EC32C5174A8E5B00D73D08 /* libGMStackTrace.a */; };
-		F6EC32DE174A8E5B00D73D08 /* libSBJSon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EC32C6174A8E5B00D73D08 /* libSBJSon.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +61,6 @@
 		F6EC32AD174A8E5B00D73D08 /* EmbeddedAgentSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmbeddedAgentSettings.plist; sourceTree = "<group>"; };
 		F6EC32C4174A8E5B00D73D08 /* libEmbeddedAgentWithNoCoreLocation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEmbeddedAgentWithNoCoreLocation.a; sourceTree = "<group>"; };
 		F6EC32C5174A8E5B00D73D08 /* libGMStackTrace.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGMStackTrace.a; sourceTree = "<group>"; };
-		F6EC32C6174A8E5B00D73D08 /* libSBJSon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSBJSon.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +71,6 @@
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
 				F6EC32DC174A8E5B00D73D08 /* libEmbeddedAgentWithNoCoreLocation.a in Frameworks */,
 				F6EC32DD174A8E5B00D73D08 /* libGMStackTrace.a in Frameworks */,
-				F6EC32DE174A8E5B00D73D08 /* libSBJSon.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +135,6 @@
 				F6EC32AD174A8E5B00D73D08 /* EmbeddedAgentSettings.plist */,
 				F6EC32C4174A8E5B00D73D08 /* libEmbeddedAgentWithNoCoreLocation.a */,
 				F6EC32C5174A8E5B00D73D08 /* libGMStackTrace.a */,
-				F6EC32C6174A8E5B00D73D08 /* libSBJSon.a */,
 			);
 			path = app47;
 			sourceTree = "<group>";
@@ -183,6 +179,8 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "agent" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
