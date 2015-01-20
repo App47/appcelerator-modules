@@ -41,7 +41,7 @@ Update the files in 3.x/ios/agent/app47
   * libEmbeddedAgentWithNoCoreLocation.a - updated library for the App47 Agent
 
 
-Update the file 3.x/android/agent/manifest with the proper version number for the iOS agent.
+Update the file 3.x/ios/agent/manifest with the proper version number for the iOS agent.
 
 
 ## Build the modules
@@ -54,6 +54,6 @@ run
 
 ### iOS
 
-cd 3.x/android/ios
+cd 3.x/ios/agent
 run
 # ./build.py
