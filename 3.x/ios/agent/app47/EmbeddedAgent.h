@@ -229,6 +229,8 @@ extern NSString * const EmbeddedAgentRegistrationDidFail;
 //////////////////////////////////////////////////////////////////
 // Logging.
 
++ (void) sendCachedData;
+
 
 + (void) logMessage:(NSString *) message 
            fileName:(NSString *) fileName 
