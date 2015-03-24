@@ -1,6 +1,10 @@
 # App47 Agent Appcelerator Modules
 
+
 This repository contains two code bases: one for the Android Agent and another for the iOS Agent. You can find the zip files containing the built and supported versions of these platform modules in the [App47 Resource center](https://cirrus.app47.com) located in your account's dashboard.
+
+## Android support
+If you are building to the Android platform, please make sure that you include the Android Support jar from the Android distribution with your app. This is normally included with our agent, but not included here to prevent double binding in the class loader within Titanium.
 
 ## How to use the App47 Agent
 
