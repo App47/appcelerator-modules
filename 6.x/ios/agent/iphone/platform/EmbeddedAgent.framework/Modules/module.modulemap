@@ -1,0 +1,6 @@
+framework module EmbeddedAgent {
+  umbrella header "EmbeddedAgent.h"
+
+  export *
+  module * { export * }
+}

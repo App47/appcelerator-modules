@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 4.0.0
+apiversion: 2
+architectures: armv7 arm64 i386 x86_64
+description: App47 Embedded Agent iOS module
+author: App47, Inc
+license: MIT
+copyright: Copyright © 2014-2018 by App47
+
+# these should not be edited
+name: agent
+moduleid: com.app47.agent
+guid: eff8eb94-8985-4f78-8d4a-d20dc86f742e
+platform: iphone
+minsdk: 6.1.2.GA
